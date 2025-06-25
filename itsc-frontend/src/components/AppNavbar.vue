@@ -1,19 +1,23 @@
 <template>
   <nav class="navbar">
     <div class="logo">
-      <img src="/logo.svg" alt="ITSC Logo" />
+      <img src="/itsc-logo.jpg" alt="ITSC Logo" />
       <div class="title">
-        <strong>Instituto Técnico Córdoba</strong>
-        <small>Formación Profesional de Calidad</small>
+        <strong>Instituto Técnico Superior Córdoba</strong>
+        <small>Ministerio de Educación</small>
+        <small>Dirección General de Educación Técnica y Formación Profesional</small>
+        <small>Subdirección de Educación Superior</small>
       </div>
     </div>
     <ul class="nav-links">
       <li><a href="#">Inicio</a></li>
-      <li><a href="#">Cursos</a></li>
-      <li><a href="#">Nosotros</a></li>
-      <li><a href="#">Instalaciones</a></li>
+      <li><a href="#">Sobre Nosotros</a></li>
+      <li><a href="#">Sede Central</a></li>
+      <li><a href="#">Carreras</a></li>
+      <li><a href="#">Novedades</a></li>
+      <li><a href="#">Otras Sedes</a></li>
       <li><a href="#">Contacto</a></li>
-      <li><a class="button" href="#">Inscríbete</a></li>
+      <li><a class="button" target="_blank" href="https://8048bf14c1.clvaw-cdnwnd.com/f80d7a5356be0d319861778d7e89b608/200002897-3efae3efb0/REQUISITOS%20matriculacion.pdf">Requisitos Inscripción</a></li>
     </ul>
   </nav>
 </template>

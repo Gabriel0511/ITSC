@@ -5,7 +5,7 @@
       Conocé nuestras propuestas académicas en tecnología, administración y oficios.
     </p>
     <div class="grid">
-      <div class="card" v-for="carrera in carreras" :key="carrera.nombre">
+      <div class="card" v-for="carrera in carreras" :key="carrera.id">
         <img :src="carrera.img" alt="Imagen de carrera" class="card-img" />
         <h3>{{ carrera.nombre }}</h3>
         <p>{{ carrera.descripcion }}</p>
@@ -16,28 +16,19 @@
 </template>
 
 <script setup>
-const carreras = [
-  {
-    nombre: 'Desarrollo Web',
-    descripcion: 'Aprendé a crear sitios y aplicaciones modernas usando tecnologías actuales.',
-    img: 'https://via.placeholder.com/400x200?text=Desarrollo+Web'
-  },
-  {
-    nombre: 'Administración de Empresas',
-    descripcion: 'Formate en gestión administrativa, contable y recursos humanos.',
-    img: 'https://via.placeholder.com/400x200?text=Administración'
-  },
-  {
-    nombre: 'Electricidad Industrial',
-    descripcion: 'Capacitación en instalaciones eléctricas y mantenimiento industrial.',
-    img: 'https://via.placeholder.com/400x200?text=Electricidad'
-  },
-  {
-    nombre: 'Redes y Telecomunicaciones',
-    descripcion: 'Configuración y mantenimiento de redes informáticas y telecomunicaciones.',
-    img: 'https://via.placeholder.com/400x200?text=Redes'
+import { ref, onMounted } from 'vue'
+import axios from 'axios'
+
+const carreras = ref([])
+
+onMounted(async () => {
+  try {
+    const response = await axios.get('http://localhost:8000/api/carreras/')
+    carreras.value = response.data
+  } catch (error) {
+    console.error('Error al cargar las carreras:', error)
   }
-]
+})
 </script>
 
 <style scoped>
